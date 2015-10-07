@@ -13,7 +13,7 @@ namespace Config.Sections
             set { this["min"] = value; }
         }
 
-        [ConfigurationProperty("max", IsRequired = false, DefaultValue = int.MaxValue)]
+        [ConfigurationProperty("max", IsRequired = false, DefaultValue = 100)]
         public int Max
         {
             get { return (int)this["max"]; }

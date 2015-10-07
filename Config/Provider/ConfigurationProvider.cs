@@ -10,7 +10,8 @@ namespace Config.Provider
         public ConfigurationProvider(string appConfigPath)
         {
             var fileMap = new ExeConfigurationFileMap { ExeConfigFilename = appConfigPath };
-            _config = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
+            _config = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);    
+            
         }
 
         public TSection Read<TSection>(string sectionName) where TSection : ConfigurationSection
