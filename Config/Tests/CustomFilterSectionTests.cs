@@ -22,11 +22,11 @@ namespace Config.Tests
             </configuration>");
 
 
-            var shardFilterConfigurationProvider = new ConfigurationProvider(testContext.ConfigFilePath);
-            var shardFilterConfig = shardFilterConfigurationProvider.Read<FilterConfigurationSection>(FilterConfigurationSection.SectionName);
+            var configurationProvider = new ConfigurationProvider(testContext.ConfigFilePath);
+            var filterConfigSection = configurationProvider.Read<FilterConfigurationSection>(FilterConfigurationSection.SectionName);
 
-            shardFilterConfig.Range.Min.Should().Be(1);
-            shardFilterConfig.Range.Max.Should().Be(500);            
+            filterConfigSection.Range.Min.Should().Be(1);
+            filterConfigSection.Range.Max.Should().Be(500);            
 
             testContext.Destroy();
 
@@ -46,11 +46,11 @@ namespace Config.Tests
             </configuration>");
 
 
-            var shardFilterConfigurationProvider = new ConfigurationProvider(testContext.ConfigFilePath);
-            var shardFilterConfig = shardFilterConfigurationProvider.Read<FilterConfigurationSection>(FilterConfigurationSection.SectionName);
+            var configurationProvider = new ConfigurationProvider(testContext.ConfigFilePath);
+            var filterConfigSection = configurationProvider.Read<FilterConfigurationSection>(FilterConfigurationSection.SectionName);
 
-            shardFilterConfig.Range.Min.Should().Be(1);
-            shardFilterConfig.Range.Max.Should().Be(100);
+            filterConfigSection.Range.Min.Should().Be(1);
+            filterConfigSection.Range.Max.Should().Be(100);
 
             testContext.Destroy();
 
