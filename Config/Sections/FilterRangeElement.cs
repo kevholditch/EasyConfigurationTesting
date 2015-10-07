@@ -7,14 +7,14 @@ namespace Config.Sections
         public const string ElementName = "range";
 
         [ConfigurationProperty("min", IsRequired = false, DefaultValue = int.MinValue)]
-        public virtual int Min
+        public int Min
         {
             get { return (int)this["min"]; }
             set { this["min"] = value; }
         }
 
         [ConfigurationProperty("max", IsRequired = false, DefaultValue = int.MaxValue)]
-        public virtual int Max
+        public int Max
         {
             get { return (int)this["max"]; }
             set { this["max"] = value; }

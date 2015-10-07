@@ -11,7 +11,7 @@ namespace Config.Tests
         [Test]
         public void ShardFilterReadsTheRange()
         {
-            var testContext = BuildA.TestAppConfig.WithAppConfig(@"<?xml version=""1.0""?>
+            TestAppConfigContext testContext = BuildA.NewTestAppConfig(@"<?xml version=""1.0""?>
             <configuration>
               <configSections>
                 <section name=""customFilter"" type=""Config.Sections.FilterConfigurationSection, Config""/>
@@ -19,7 +19,7 @@ namespace Config.Tests
               <customFilter>
                 <range min=""1"" max=""500"" />
               </customFilter>
-            </configuration>").Build();
+            </configuration>");
 
 
             var shardFilterConfigurationProvider = new ConfigurationProvider(testContext.ConfigFilePath);

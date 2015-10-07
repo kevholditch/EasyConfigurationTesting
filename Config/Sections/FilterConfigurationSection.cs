@@ -7,7 +7,7 @@ namespace Config.Sections
         public const string SectionName = "customFilter";
 
         [ConfigurationProperty(FilterRangeElement.ElementName, IsRequired = true)]
-        public virtual FilterRangeElement Range
+        public FilterRangeElement Range
         {
             get { return (FilterRangeElement)this[FilterRangeElement.ElementName]; }
             set { this[FilterRangeElement.ElementName] = value; }

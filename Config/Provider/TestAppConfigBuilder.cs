@@ -5,13 +5,17 @@ namespace Config.Provider
 {
     public class TestAppConfigBuilder
     {
-        private string _appConfig;
+        private readonly string _appConfig;
 
-        public TestAppConfigBuilder WithAppConfig(string appConfig)
+        public TestAppConfigBuilder(string appConfig)
         {
-            _appConfig = appConfig;
-            return this;
+            _appConfig = appConfig;            
 
+        }
+
+        public static implicit operator TestAppConfigContext(TestAppConfigBuilder testAppConfigBuilder)
+        {
+            return testAppConfigBuilder.Build();
         }
 
         public TestAppConfigContext Build()
